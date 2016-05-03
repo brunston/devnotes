@@ -9,7 +9,10 @@ class Note():
 
         if self.date == -1:
             self.todo = True
-            self.calendar = False
+            self.appt = False
         else:
             self.todo = False
-            self.calendar = True
+            self.appt = True
+
+    def store(self):
+        
