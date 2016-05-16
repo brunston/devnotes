@@ -5,7 +5,8 @@
 import sqlite3
  
 def execute_sql(sql_command):
-        
+    "executes sql command written as a string"
+
     conn = sqlite3.connect("note.db")
     cursor = conn.cursor()
     cursor.execute(sql_command)
