@@ -40,16 +40,24 @@ class Note():
     def store_note(self):
         
         sql_ = """
-        INSERT into note (date, text, done) VALUES (NULL, "{0}", "{1}", 0);
+        INSERT INTO note (date, text, done) VALUES (NULL, "{0}", "{1}", 0);
         """.format(self.date, self.text)
         execute_sql(sql_)
+        
+        return None
 
     def get_all_notes(self):
 
         sql_ = """
-        SELECT * FROM note WHERE done = 0"""
+        SELECT * FROM note WHERE done = 0;"""
         execute_sql(sql_)
+        
+        return None
 
     def remove_note(self, number):
-       #for next time
-       pass
+    
+        sql_ = """
+        DELETE FROM note WHERE number = {0};""".format(number)
+        execute_sql(sql_)
+        
+        return None
